@@ -20,3 +20,6 @@ button {
 button:hover {
     background: var(--tg-theme-secondary-bg-color);
 }
+#second{
+    display: none;
+}

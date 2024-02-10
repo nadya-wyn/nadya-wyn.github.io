@@ -6,11 +6,32 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 <body>
-<p>Rise and shine!!</p>
+<div id="first">Rise and shine!!</div>
 
-<button>Great!</button>
+<button id="great">Great!</button>
+
+<div id="second">
+    <em>here is our new content</em>
+    <p>
+        <span id="user_name"></span>
+    </p>
+</div>
+
+<button id="btn_close">Close</button>
+
 
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
-
+<script>
+    let tg = window.Telegram.Webapp;
+    let greatButton = document.getElementById("great");
+    let closeButton = document.getElementById("btn_close");
+    greatButton.addEventListener("click", () => {
+         document.getElementById("second").style.display = "block";
+         document.getElementById("user_name").textContent = tg.initDataUnsafe.user.first_name + tg.initDataUnsafe.user.last_name
+    });
+    closeButton.addEventListener("click", () => {
+        tg.close();
+    });
+</script>
 </body>
 </html>
