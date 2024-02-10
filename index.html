@@ -13,7 +13,7 @@
 <div id="second">
     <em>here is our new content</em>
     <p>
-        <span id="user_name">123</span>
+        <span id="user_name">Hello </span>
     </p>
 </div>
 
@@ -27,7 +27,7 @@
     let closeButton = document.getElementById("btn_close");
     greatButton.addEventListener("click", () => {
          document.getElementById("second").style.display = "block";
-         document.getElementById("user_name").textContent = tg.initDataUnsafe.user.first_name + tg.initDataUnsafe.user.last_name;
+         document.getElementById("user_name").textContent = + tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name;
     });
     closeButton.addEventListener("click", () => {
         tg.close();
