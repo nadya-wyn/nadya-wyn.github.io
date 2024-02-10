@@ -15,6 +15,11 @@
     <p>
         <span id="user_name">123</span>
     </p>
+    <p>
+        <form>
+            <input type="text" placeholder="Say something" id="user_message">
+        </form>
+    </p>
 </div>
 
 <button id="btn_close">Close</button>
@@ -25,11 +30,23 @@
     let tg = window.Telegram.WebApp;
     let greatButton = document.getElementById("great");
     let closeButton = document.getElementById("btn_close");
+    tg.expand();
+
     greatButton.addEventListener("click", () => {
          document.getElementById("second").style.display = "block";
          document.getElementById("user_name").textContent = "Hello " + tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name;
     });
     closeButton.addEventListener("click", () => {
+        let user_message = document.getElementById("user_message").value;
+        let message_date = new Date().toDateString();
+
+        let data = {
+            message: user_message,
+            date: message_date
+        }
+
+        tg.sendData(JSON.stringify(data));
+
         tg.close();
     });
 </script>
