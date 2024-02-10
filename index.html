@@ -13,7 +13,7 @@
 <div id="second">
     <em>here is our new content</em>
     <p>
-        <span id="user_name"></span>
+        <span id="user_name">123</span>
     </p>
 </div>
 
@@ -22,12 +22,13 @@
 
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
-    let tg = window.Telegram.Webapp;
+    let tg = window.Telegram.WebApp;
     let greatButton = document.getElementById("great");
     let closeButton = document.getElementById("btn_close");
     greatButton.addEventListener("click", () => {
          document.getElementById("second").style.display = "block";
-         document.getElementById("user_name").textContent = tg.initDataUnsafe.user.first_name + tg.initDataUnsafe.user.last_name
+        //  document.getElementById("user_name").textContent = tg.initDataUnsafe.user.first_name + tg.initDataUnsafe.user.last_name;
+        document.getElementById("user_name").textContent = 456;
     });
     closeButton.addEventListener("click", () => {
         tg.close();
