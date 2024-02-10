@@ -27,8 +27,7 @@
     let closeButton = document.getElementById("btn_close");
     greatButton.addEventListener("click", () => {
          document.getElementById("second").style.display = "block";
-        //  document.getElementById("user_name").textContent = tg.initDataUnsafe.user.first_name + tg.initDataUnsafe.user.last_name;
-        document.getElementById("user_name").textContent = 456;
+         document.getElementById("user_name").textContent = tg.initDataUnsafe.user.first_name + tg.initDataUnsafe.user.last_name;
     });
     closeButton.addEventListener("click", () => {
         tg.close();
